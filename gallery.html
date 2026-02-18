@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Peak Contracting - home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!--SCRIPT FOR POP UP MENU-->
+<script>
+    const menuBtn = document.getElementById("menu_btn");
+    const mobileMenu = document.getElementById("mobile_menu");
+
+    menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileMenu.classList.toggle("open");
+    });
+
+    document.addEventListener("click", (e) => {
+    if (!mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove("open");
+    }
+    });
+</script>
+<!--SCRIPT FOR MASONRY-->
+<script>
+  var elem = document.querySelector('.gallery');
+  var msnry = new Masonry(elem, {
+    itemSelector: 'img',
+    percentPosition: true,
+  });
+
+  imagesLoaded(elem).on('progress', function() {
+    msnry.layout();
+  });
+</script>
+
+<body>
+    <nav class="col-12">
+        <div>
+            <ul class="p navbar">
+                <li><img class="logo_icon" src="/imgs/Logo.png"></li>
+                <div class="nav_menu">
+                <li class="nav_btns"><a class="nav_links" href="index.html">Home</a></li>
+                <li class="nav_btns"><a class="nav_links active" href="gallery.html">Gallery</a></li>
+                <li class="nav_btns"><a class="nav_links" href="___us.html">Contact Us</a></li>
+                </div>
+                <div class="mobile_navbar">
+                    <a href="#" id="menu_btn">☰</a>
+                </div>
+                <div id="mobile_menu" class="menu h4">
+                    <li class="nav_btns"><a class="nav_links" href="index.html">Home</a></li>
+                    <li class="nav_btns"><a class="nav_links active" href="gallery.html">Gallery</a></li>
+                    <li class="nav_btns"><a class="nav_links" href="___us.html">Contact Us</a></li>
+                </div>
+            </ul>
+        </div>
+    </nav>
+<main>
+    <section class="mar_top">
+        <div class="gallery">
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/001.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/002.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/003.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/004.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/005.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/006.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/007.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/008.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/009.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/010.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/011.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/012.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/013.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/014.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/015.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/16.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/17.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/18.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/19.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/20.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/21.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/22.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/23.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/24.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/25.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/26.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/27.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/28.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/29.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/30.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/31.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/32.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/33.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/34.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/35.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/36.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/37.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/38.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/39.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/40.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/41.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/42.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/43.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/44.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/45.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/46.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/47.jpg"></div>
+            <div class="gallery_box"><img class="gallery_img" src="/imgs/48.jpg"></div>
+        </div>
+    </section>
+</main>
+<footer class="row col-12">
+    <div class="footer_content">
+    </div>
+    <div class="footer_content">
+    </div>
+    <div class="footer_content">
+    </div>
+</footer>
+</body>
+</html>

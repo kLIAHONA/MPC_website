@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Peak Contracting - home</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<!--SCRIPT FOR POP UP MENU-->
+<script>
+    const menuBtn = document.getElementById("menu_btn");
+    const mobileMenu = document.getElementById("mobile_menu");
+
+    menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileMenu.classList.toggle("open");
+    });
+
+    document.addEventListener("click", (e) => {
+    if (!mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove("open");
+    }
+    });
+</script>
+<!--SCRIPT FOR HEADER CAROUSEL SLIDE-->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const track = document.querySelector('.header_carousel_track');
+    const slides = document.querySelectorAll('.header_carousel_content');
+    const dots = document.querySelectorAll('.carousel_dot');
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    const realSlides = dots.length;
+
+    function updateDots(index) {
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    }
+
+    function moveSlide() {
+        currentIndex++;
+
+        // Update dots immediately
+        updateDots(currentIndex % realSlides);
+
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    track.addEventListener('transitionend', () => {
+
+        // Handle invisible snap from cloned slide
+        if (currentIndex === totalSlides - 1) {
+            track.style.transition = 'none';
+            currentIndex = 0;
+            track.style.transform = `translateX(0%)`;
+            void track.offsetWidth;
+            track.style.transition = 'transform 0.6s ease-in-out';
+        }
+    });
+
+    // Dot click navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+
+            updateDots(index); // update instantly
+
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        });
+    });
+
+    setInterval(moveSlide, 4000);
+});
+</script>
+<!--SCRIPT FOR CAROUSEL BUTTONS-->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            const items = carousel.querySelectorAll('.carousel_content');
+            if (!items || items.length === 0) return;
+
+            const buttonsHtml = Array.from(items, () => '<button type="button" class="carousel_button" aria-label="carousel control"></button>');
+
+            carousel.insertAdjacentHTML('beforeend', `
+                <div class="carousel_nav">
+                    ${buttonsHtml.join('')}
+                </div>
+            `);
+
+            const buttons = carousel.querySelectorAll('.carousel_button');
+            if (!buttons || buttons.length === 0) return;
+            let currentIndex = 0;
+
+            const setActive = (index) => {
+                const i = ((index % items.length) + items.length) % items.length;
+                items.forEach(item => item.classList.remove('carousel_content-active'));
+                buttons.forEach(btn => btn.classList.remove('carousel_button-active'));
+                items[i].classList.add('carousel_content-active');
+                buttons[i].classList.add('carousel_button-active');
+                currentIndex = i;
+            };
+
+            buttons.forEach((button, i) => {
+                button.addEventListener('click', () => setActive(i));
+            });
+
+            const prevBtn = carousel.querySelector('.prev_btn');
+            const nextBtn = carousel.querySelector('.next_btn');
+            if (prevBtn) prevBtn.addEventListener('click', () => setActive(currentIndex - 1));
+            if (nextBtn) nextBtn.addEventListener('click', () => setActive(currentIndex + 1));
+
+            setActive(0);
+        });
+    });
+</script>
+<!--SCRIPT FOR CAROUSEL ARROWS-->
+<script>
+    const nextImg = document.getElementById('next_btn');
+    const prevImg = document.getElementById('prev_btn');
+    
+    const nextButton = nextImg ? nextImg.closest('.carousel_btn') || nextImg.parentElement : null;
+    const prevButton = prevImg ? prevImg.closest('.carousel_btn') || prevImg.parentElement : null;
+    
+    function addPressed(el) { if (el) el.classList.add('pressed'); }
+    function removePressed(el) { if (el) el.classList.remove('pressed'); }
+    
+    function attachPressListeners(el) {
+        if (!el) return;
+        
+        el.addEventListener('pointerdown', () => addPressed(el));
+        el.addEventListener('pointerup', () => removePressed(el));
+        el.addEventListener('pointercancel', () => removePressed(el));
+        el.addEventListener('pointerleave', () => removePressed(el));
+        
+        el.addEventListener('touchstart', () => addPressed(el), {passive: true});
+        el.addEventListener('touchend', () => removePressed(el));
+    }
+    
+    attachPressListeners(nextButton);
+    attachPressListeners(prevButton);
+</script>
+<body>
+    <nav class="col-12">
+        <div>
+            <ul class="p navbar">
+                <li><img class="logo_icon" src="/imgs/Logo.png"></li>
+                <div class="nav_menu">
+                <li class="nav_btns"><a class="nav_links active" href="index.html">Home</a></li>
+                <li class="nav_btns"><a class="nav_links" href="gallery.html">Gallery</a> </li>
+                <li class="nav_btns"><a class="nav_links" href="___us.html">Contact Us</a></li>
+                </div>
+                <div class="mobile_navbar">
+                    <a href="#" id="menu_btn">☰</a>
+                </div>
+                <div id="mobile_menu" class="menu h4">
+                    <li class="nav_btns"><a class="nav_links active" href="index.html">Home</a></li>
+                    <li class="nav_btns"><a class="nav_links" href="gallery.html">Gallery</a> </li>
+                    <li class="nav_btns"><a class="nav_links" href="___us.html">Contact Us</a></li>
+                </div>
+            </ul>
+        </div>
+    </nav>
+<main>
+        <div class="header_carousel">
+            <div class="header_carousel_track">
+                <div class="header_carousel_content">
+                    <img class="header_img" src="/imgs/index_top.jpg">
+                </div>
+                <div class="header_carousel_content">
+                    <img class="header_img" src="/imgs/050.jpg">
+                </div>
+                <div class="header_carousel_content">
+                    <img class="header_img" src="/imgs/049.jpg">
+                </div>
+                <div class="header_carousel_content">
+                    <img class="header_img" src="/imgs/index_top.jpg">
+                </div>
+            </div>
+            <div class="header_carousel_nav">
+                <span class="carousel_dot active"></span>
+                <span class="carousel_dot"></span>
+                <span class="carousel_dot"></span>
+            </div>
+        </div>
+    <section class="grey_box" id="###">
+        <div>
+            <h1 class="motto">Built with Integrity. Designed for Family</h1>
+            <span class="text_right">
+                <h3>Hours of Operation</br>
+                <span class="h5">Monday&#8211;Friday</br>7:30am&#8211;6:00pm</span></h3>
+            </span>
+        </div>
+    </section>
+    <section id="reviews" class="section_target">
+    </section>
+    <section>
+        <div class="carousel">
+            <div class="carousel_content">
+                <div class="row flex">
+                    <div class="review_text">
+                        <h4>This is where you would put the tagline for the review</h4>
+                        <p class="text_center star">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+                        <p>This is where you would put the text for your review</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel_btn prev_btn p"><div id="prev_btn"><span id="center">&#60</span></div></button>
+            <button class="carousel_btn next_btn p"><div id="next_btn"><span id="center">&#62</span></div></button>
+        </div>
+    </section>
+</main>
+<footer class="row col-12">
+    <div class="footer_content">
+    </div>
+    <div class="footer_content">
+    </div>
+    <div class="footer_content">
+    </div>
+</footer>
+</body>
+</html>
