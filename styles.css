@@ -628,7 +628,12 @@ footer {
 }
 
 @media screen and (max-width: 585px) {
+    .nav_menu {
+        display: none;}
     .mobile_navbar {
         display: inline-block;
         margin-right: 10vw;}
+    #menu {
+        width: 5vw;
+        padding: 0px;}
 }
