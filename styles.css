@@ -647,6 +647,9 @@ footer {
     #menu {
         width: 5vw;
         padding: 0px;}
+    .motto {
+    font-size: calc(28pt + 0.5vw);
+	line-height: 36pt;}
 }
 
 @media screen and (max-width: 469px) {
