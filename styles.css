@@ -634,6 +634,7 @@ footer {
 
 @media screen and (max-width: 630px) {
     .gallery_box {
+        margin: 1px;
         width: 49%;}
 }
 
@@ -648,8 +649,7 @@ footer {
         padding: 0px;}
 }
 
-@media screen and (max-width: 552px) {
+@media screen and (max-width: 400px) {
     .gallery_box {
-        margin: 0vw;
         width: 95%;}
 }
