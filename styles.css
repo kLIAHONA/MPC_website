@@ -75,6 +75,9 @@ figcaption {
 .motto {
     width: 100%;}
 
+.hours {
+    margin-bottom: -5vh;}
+
 .free {
     font-weight: 600;
     font-variant-caps: small-caps;
@@ -660,7 +663,7 @@ footer {
     .hours {
     	font-size: calc(20pt + 0.5vw);
 	    line-height: 28pt;
-        margin-bottom: -3vh;}
+        margin-bottom: -3vh!important;}
     .times {
         font-size: calc(8pt + 0.5vw);
 	    line-height: 18pt;}
@@ -668,6 +671,6 @@ footer {
         margin: auto;
         width: 100%;}
     .footer_content {
-        font-size: calc(6pt + 0.5vw);
-        line-height: 10pt;}
+        font-size: calc(6pt + 0.5vw)!important;
+        line-height: 10pt!important;}
 }
