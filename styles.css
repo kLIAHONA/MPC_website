@@ -73,7 +73,7 @@ figcaption {
     text-wrap: wrap;}
 
 .motto {
-    width: 99vw;}
+    width: 100%;}
 
 .free {
     font-weight: 600;
@@ -648,11 +648,20 @@ footer {
         width: 5vw;
         padding: 0px;}
     .motto {
-    font-size: calc(28pt + 0.5vw);
-	line-height: 36pt;}
+        font-size: calc(28pt + 0.5vw);
+        line-height: 36pt;}
 }
 
 @media screen and (max-width: 469px) {
+    .motto {
+        font-size: calc(24pt + 0.5vw);
+	    line-height: 32pt;}
+    .hours {
+    	font-size: calc(20pt + 0.5vw);
+	    line-height: 28pt;}
+    .times {
+        font-size: calc(8pt + 0.5vw);
+	    line-height: 18pt;}
     .gallery_box {
         margin: auto;
         width: 100%;}
