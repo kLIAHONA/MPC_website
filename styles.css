@@ -540,6 +540,7 @@ section {
 /*FOOTER*/
 .footer_content {
 	height: 100px;
+    text-wrap: wrap;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
