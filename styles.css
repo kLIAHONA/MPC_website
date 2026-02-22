@@ -658,7 +658,8 @@ footer {
 	    line-height: 32pt;}
     .hours {
     	font-size: calc(20pt + 0.5vw);
-	    line-height: 28pt;}
+	    line-height: 28pt;
+        margin-bottom: -3vh;}
     .times {
         font-size: calc(8pt + 0.5vw);
 	    line-height: 18pt;}
