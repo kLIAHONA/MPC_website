@@ -7,7 +7,74 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="server.js">
 </head>
-<!--SCRIPT FOR POP UP MENU
+<body>
+    <nav class="col-12">
+        <div>
+            <ul class="p navbar">
+                <li><img class="logo_icon" src="/imgs/Logo.png"></li>
+                <div class="nav_menu">
+                <li class="nav_btns"><a class="nav_links" href="index.html">Home</a></li>
+                <li class="nav_btns"><a class="nav_links" href="gallery.html">Gallery</a></li>
+                <li class="nav_btns"><a class="nav_links active" href="___us.html">Contact Us</a></li>
+                </div>
+                <div class="mobile_navbar">
+                    <a href="#" id="menu_btn">☰</a>
+                </div>
+                <div id="mobile_menu" class="menu h4">
+                    <li class="nav_btns"><a class="nav_links" href="index.html">Home</a></li>
+                    <li class="nav_btns"><a class="nav_links" href="gallery.html">Gallery</a></li>
+                    <li class="nav_btns"><a class="nav_links active" href="___us.html">Contact Us</a></li>
+                </div>
+            </ul>
+        </div>
+    </nav>
+<main>
+    <section id="###">
+        <div class="header_img">
+        </div>
+    </section>
+
+
+
+    <section id="contact_us" class="top_mar">
+        <div class="contact_left">
+            <h2>Reach out for a <span class="free">free estimate!</span></h2>
+            <div class="row">
+                <p><img src="imgs/icons/email.svg" class="icon"><span class="info"> mtnpkcontracting@gmail.com</span></p>
+            </div>
+            <div>
+                <div class="row">
+                    <p><img src="/imgs/icons/phone.svg" class="icon"><span class="info"> (509) 954&#8211;2853</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="contact_right">
+            <form class="contact_form" id="contact_form">
+                <input type="text" id="name" placeholder="Full Name *">
+                <input type="email" id="email" placeholder="Email *">
+                <input type="text" id="phone" placeholder="Phone Number *">
+                <input type="text" id="subject" placeholder="Subject">
+                <textarea id="message" placeholder="Message *"></textarea>
+                <button type="submit" id="submit_btn">Submit Form</button> 
+            </form>
+        </div>
+    </section>
+
+
+
+</main>
+<footer class="row col-12">
+    <div class="footer_content">
+        <h6>Hours of Operation</br>Monday&#8211;Friday</br>7:30am&#8211;6:00pm</h6>
+    </div>
+    <div class="footer_content">
+        <h6>Located in Spokane, Washington</h6>
+    </div>
+    <div class="footer_content">
+        <h6>(509) 954-2853</br>mtnpkcontracting@gmail.com</h6>
+    </div>
+</footer>
+<!--SCRIPT FOR POP UP MENU-->
 <script>
     const menuBtn = document.getElementById("menu_btn");
     const mobileMenu = document.getElementById("mobile_menu");
@@ -22,7 +89,7 @@
         mobileMenu.classList.remove("open");
     }
     });
-</script>-->
+</script>
 <!--SCRIPT FOR CAROUSEL BUTTONS-->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -130,73 +197,5 @@ form.addEventListener('submit', async (e) => {
 })
 })
 </script>
-
-<body>
-    <nav class="col-12">
-        <div>
-            <ul class="p navbar">
-                <li><img class="logo_icon" src="/imgs/Logo.png"></li>
-                <div class="nav_menu">
-                <li class="nav_btns"><a class="nav_links" href="index.html">Home</a></li>
-                <li class="nav_btns"><a class="nav_links" href="gallery.html">Gallery</a></li>
-                <li class="nav_btns"><a class="nav_links active" href="___us.html">Contact Us</a></li>
-                </div>
-                <div class="mobile_navbar">
-                    <a href="#" id="menu_btn">☰</a>
-                </div>
-                <div id="mobile_menu" class="menu h4">
-                    <li class="nav_btns"><a class="nav_links" href="index.html">Home</a></li>
-                    <li class="nav_btns"><a class="nav_links" href="gallery.html">Gallery</a></li>
-                    <li class="nav_btns"><a class="nav_links active" href="___us.html">Contact Us</a></li>
-                </div>
-            </ul>
-        </div>
-    </nav>
-<main>
-    <section id="###">
-        <div class="header_img">
-        </div>
-    </section>
-
-
-
-    <section id="contact_us" class="top_mar">
-        <div class="contact_left">
-            <h2>Reach out for a <span class="free">free estimate!</span></h2>
-            <div class="row">
-                <p><img src="imgs/icons/email.svg" class="icon"><span class="info"> mtnpkcontracting@gmail.com</span></p>
-            </div>
-            <div>
-                <div class="row">
-                    <p><img src="/imgs/icons/phone.svg" class="icon"><span class="info"> (509) 954&#8211;2853</span></p>
-                </div>
-            </div>
-        </div>
-        <div class="contact_right">
-            <form class="contact_form" id="contact_form">
-                <input type="text" id="name" placeholder="Full Name *">
-                <input type="email" id="email" placeholder="Email *">
-                <input type="text" id="phone" placeholder="Phone Number *">
-                <input type="text" id="subject" placeholder="Subject">
-                <textarea id="message" placeholder="Message *"></textarea>
-                <button type="submit" id="submit_btn">Submit Form</button> 
-            </form>
-        </div>
-    </section>
-
-
-
-</main>
-<footer class="row col-12">
-    <div class="footer_content">
-        <h6>Hours of Operation</br>Monday&#8211;Friday</br>7:30am&#8211;6:00pm</h6>
-    </div>
-    <div class="footer_content">
-        <h6>Located in Spokane, Washington</h6>
-    </div>
-    <div class="footer_content">
-        <h6>(509) 954-2853</br>mtnpkcontracting@gmail.com</h6>
-    </div>
-</footer>
 </body>
 </html>

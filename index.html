@@ -6,6 +6,85 @@
     <title>Mountain Peak Contracting - home</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
+<body>
+    <nav class="col-12">
+        <div>
+            <ul class="p navbar">
+                <li><a class="nav_links" href="index.html"><img class="logo_icon" src="/imgs/Logo.png"></a></li>
+                <div class="nav_menu">
+                    <li class="nav_btns"><a class="nav_links active" href="index.html">Home</a></li>
+                    <li class="nav_btns"><a class="nav_links" href="gallery.html">Gallery</a> </li>
+                    <li class="nav_btns"><a class="nav_links" href="___us.html">Contact Us</a></li>
+                </div>
+                <div class="mobile_navbar">
+                    <a href="#" id="menu_btn">☰</a>
+                </div>
+                <div id="mobile_menu" class="menu h4">
+                    <li class="nav_btns"><a class="nav_links active" href="index.html">Home</a></li>
+                    <li class="nav_btns"><a class="nav_links" href="gallery.html">Gallery</a> </li>
+                    <li class="nav_btns"><a class="nav_links" href="___us.html">Contact Us</a></li>
+                </div>
+            </ul>
+        </div>
+    </nav>
+<main>
+        <div class="header_carousel">
+            <div class="header_carousel_track">
+                <div class="header_carousel_content">
+                    <img class="header_img" src="/imgs/index_top.jpg">
+                </div>
+                <div class="header_carousel_content">
+                    <img class="header_img" src="/imgs/050.jpg">
+                </div>
+                <div class="header_carousel_content">
+                    <img class="header_img" src="/imgs/049.jpg">
+                </div>
+                <div class="header_carousel_content">
+                    <img class="header_img" src="/imgs/index_top.jpg">
+                </div>
+            </div>
+            <div class="header_carousel_nav">
+                <span class="carousel_dot active"></span>
+                <span class="carousel_dot"></span>
+                <span class="carousel_dot"></span>
+            </div>
+        </div>
+    <section class="grey_box" id="###">
+        <div>
+            <h1 class="motto">Built with Integrity. Designed for Family</h1>
+            <span class="text_right">
+                <h3>Hours of Operation</br>
+                <span class="h5">Monday&#8211;Friday</br>7:30am&#8211;6:00pm</span></h3>
+            </span>
+        </div>
+    </section>
+    <!--<section id="reviews" class="section_target">
+        <div class="carousel">
+            <div class="carousel_content">
+                <div class="row flex">
+                    <div class="review_text">
+                        <h4>This is where you would put the tagline for the review</h4>
+                        <p class="text_center star">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+                        <p>This is where you would put the text for your review</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel_btn prev_btn p"><div id="prev_btn"><span id="center">&#60</span></div></button>
+            <button class="carousel_btn next_btn p"><div id="next_btn"><span id="center">&#62</span></div></button>
+        </div>
+    </section>-->
+</main>
+<footer class="row col-12">
+    <div class="footer_content">
+        <h6>Hours of Operation</br>Monday&#8211;Friday</br>7:30am&#8211;6:00pm</h6>
+    </div>
+    <div class="footer_content">
+        <h6>Located in Spokane, Washington</h6>
+    </div>
+    <div class="footer_content">
+        <h6>(509) 954-2853</br>mtnpkcontracting@gmail.com</h6>
+    </div>
+</footer>
 <!--SCRIPT FOR POP UP MENU-->
 <script>
     const menuBtn = document.getElementById("menu_btn");
@@ -118,84 +197,5 @@ setInterval(nextSlide, 3000);
     attachPressListeners(nextButton);
     attachPressListeners(prevButton);
 </script>
-<body>
-    <nav class="col-12">
-        <div>
-            <ul class="p navbar">
-                <li><a class="nav_links" href="index.html"><img class="logo_icon" src="/imgs/Logo.png"></a></li>
-                <div class="nav_menu">
-                    <li class="nav_btns"><a class="nav_links active" href="index.html">Home</a></li>
-                    <li class="nav_btns"><a class="nav_links" href="gallery.html">Gallery</a> </li>
-                    <li class="nav_btns"><a class="nav_links" href="___us.html">Contact Us</a></li>
-                </div>
-                <div class="mobile_navbar">
-                    <a href="#" id="menu_btn">☰</a>
-                </div>
-                <div id="mobile_menu" class="menu h4">
-                    <li class="nav_btns"><a class="nav_links active" href="index.html">Home</a></li>
-                    <li class="nav_btns"><a class="nav_links" href="gallery.html">Gallery</a> </li>
-                    <li class="nav_btns"><a class="nav_links" href="___us.html">Contact Us</a></li>
-                </div>
-            </ul>
-        </div>
-    </nav>
-<main>
-        <div class="header_carousel">
-            <div class="header_carousel_track">
-                <div class="header_carousel_content">
-                    <img class="header_img" src="/imgs/index_top.jpg">
-                </div>
-                <div class="header_carousel_content">
-                    <img class="header_img" src="/imgs/050.jpg">
-                </div>
-                <div class="header_carousel_content">
-                    <img class="header_img" src="/imgs/049.jpg">
-                </div>
-                <div class="header_carousel_content">
-                    <img class="header_img" src="/imgs/index_top.jpg">
-                </div>
-            </div>
-            <div class="header_carousel_nav">
-                <span class="carousel_dot active"></span>
-                <span class="carousel_dot"></span>
-                <span class="carousel_dot"></span>
-            </div>
-        </div>
-    <section class="grey_box" id="###">
-        <div>
-            <h1 class="motto">Built with Integrity. Designed for Family</h1>
-            <span class="text_right">
-                <h3>Hours of Operation</br>
-                <span class="h5">Monday&#8211;Friday</br>7:30am&#8211;6:00pm</span></h3>
-            </span>
-        </div>
-    </section>
-    <!--<section id="reviews" class="section_target">
-        <div class="carousel">
-            <div class="carousel_content">
-                <div class="row flex">
-                    <div class="review_text">
-                        <h4>This is where you would put the tagline for the review</h4>
-                        <p class="text_center star">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
-                        <p>This is where you would put the text for your review</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel_btn prev_btn p"><div id="prev_btn"><span id="center">&#60</span></div></button>
-            <button class="carousel_btn next_btn p"><div id="next_btn"><span id="center">&#62</span></div></button>
-        </div>
-    </section>-->
-</main>
-<footer class="row col-12">
-    <div class="footer_content">
-        <h6>Hours of Operation</br>Monday&#8211;Friday</br>7:30am&#8211;6:00pm</h6>
-    </div>
-    <div class="footer_content">
-        <h6>Located in Spokane, Washington</h6>
-    </div>
-    <div class="footer_content">
-        <h6>(509) 954-2853</br>mtnpkcontracting@gmail.com</h6>
-    </div>
-</footer>
 </body>
 </html>

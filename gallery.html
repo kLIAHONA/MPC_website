@@ -6,35 +6,6 @@
     <title>Mountain Peak Contracting - home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<!--SCRIPT FOR POP UP MENU-->
-<script>
-    const menuBtn = document.getElementById("menu_btn");
-    const mobileMenu = document.getElementById("mobile_menu");
-
-    menuBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    mobileMenu.classList.toggle("open");
-    });
-
-    document.addEventListener("click", (e) => {
-    if (!mobileMenu.contains(e.target)) {
-        mobileMenu.classList.remove("open");
-    }
-    });
-</script>
-<!--SCRIPT FOR MASONRY-->
-<script>
-  var elem = document.querySelector('.gallery');
-  var msnry = new Masonry(elem, {
-    itemSelector: 'img',
-    percentPosition: true,
-  });
-
-  imagesLoaded(elem).on('progress', function() {
-    msnry.layout();
-  });
-</script>
-
 <body>
     <nav class="col-12">
         <div>
@@ -121,5 +92,33 @@
         <h6>(509) 954-2853</br>mtnpkcontracting@gmail.com</h6>
     </div>
 </footer>
+<!--SCRIPT FOR POP UP MENU-->
+<script>
+    const menuBtn = document.getElementById("menu_btn");
+    const mobileMenu = document.getElementById("mobile_menu");
+
+    menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileMenu.classList.toggle("open");
+    });
+
+    document.addEventListener("click", (e) => {
+    if (!mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove("open");
+    }
+    });
+</script>
+<!--SCRIPT FOR MASONRY-->
+<script>
+  var elem = document.querySelector('.gallery');
+  var msnry = new Masonry(elem, {
+    itemSelector: 'img',
+    percentPosition: true,
+  });
+
+  imagesLoaded(elem).on('progress', function() {
+    msnry.layout();
+  });
+</script>
 </body>
 </html>
