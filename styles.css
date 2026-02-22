@@ -629,10 +629,12 @@ footer {
 
 @media screen and (max-width: 830px) {
     .gallery_box {
-    display: inline-block;
-    margin: 0.25vw;
-    width: 32%;
-    height: 30vh;} 
+    width: 32%;} 
+}
+
+@media screen and (max-width: 630px) {
+    .gallery_box {
+    width: 49%;}
 }
 
 @media screen and (max-width: 585px) {
