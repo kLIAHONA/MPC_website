@@ -541,15 +541,30 @@ section {
 
 
 /*FOOTER*/
-.footer_content {
+.footer_content_w {
 	height: 100px;
-    word-wrap: normal;
+    width: 40%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-content: center;
 	text-align: center;
 	margin: auto;}
+
+.footer_content_s {
+    height: 100px;
+    width: 30%;
+    word-wrap: break-word;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+	margin: auto;}
+
+.footer_text {
+    font-size: calc(8pt + 0.5vw)!important;
+    line-height: 10pt!important;}
 
 footer {
     border-top: 2px solid #000000;
@@ -670,7 +685,6 @@ footer {
     .gallery_box {
         margin: auto;
         width: 100%;}
-    .footer_content {
-        font-size: calc(6pt + 0.5vw)!important;
-        line-height: 10pt!important;}
+    .footer_text {
+        font-size: calc(7pt + 0.5vw)!important;}
 }
