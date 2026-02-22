@@ -653,7 +653,7 @@ footer {
         line-height: 36pt;}
 }
 
-@media screen and (max-width: 469px) {
+@media screen and (max-width: 473px) {
     .motto {
         font-size: calc(24pt + 0.5vw);
 	    line-height: 32pt;}
@@ -667,4 +667,7 @@ footer {
     .gallery_box {
         margin: auto;
         width: 100%;}
+    .footer_content {
+        font-size: calc(12pt + 0.5vw)!important;
+	    line-height: calc(16pt + 1.5vh)!important;}
 }
