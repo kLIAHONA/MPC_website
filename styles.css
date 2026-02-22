@@ -651,6 +651,6 @@ footer {
 
 @media screen and (max-width: 469px) {
     .gallery_box {
-        margin: 0px;
+        margin: auto;
         width: 94%;}
 }
