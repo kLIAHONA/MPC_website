@@ -668,6 +668,6 @@ footer {
         margin: auto;
         width: 100%;}
     .footer_content {
-        font-size: calc(12pt + 0.5vw)!important;
-	    line-height: calc(16pt + 1.5vh)!important;}
+        font-size: calc(6pt + 0.5vw);
+        line-height: 10pt;}
 }
