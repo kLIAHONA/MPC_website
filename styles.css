@@ -564,7 +564,7 @@ section {
 
 .footer_text {
     font-size: calc(8pt + 0.5vw)!important;
-    line-height: 10pt!important;}
+    line-height: calc(10pt + 1vw)!important;}
 
 footer {
     border-top: 2px solid #000000;
