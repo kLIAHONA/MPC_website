@@ -26,53 +26,30 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-    const track = document.querySelector('.header_carousel_track');
-    const slides = document.querySelectorAll('.header_carousel_content');
-    const dots = document.querySelectorAll('.carousel_dot');
+    const slideContainer = document.querySelector(".slides");
+const slides = document.querySelectorAll(".slides img");
 
-    let currentIndex = 0;
-    const totalSlides = slides.length;
-    const realSlides = dots.length;
+const firstClone = slides[0].cloneNode(true);
+slideContainer.appendChild(firstClone);
 
-    function updateDots(index) {
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[index].classList.add('active');
-    }
+let currentIndex = 0;
 
-    function moveSlide() {
-        currentIndex++;
+function nextSlide() {
+  currentIndex++;
+  slideContainer.style.transition = "transform 0.5s ease-in-out";
+  slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-        // Update dots immediately
-        updateDots(currentIndex % realSlides);
+  if (currentIndex === slides.length) {
+    setTimeout(() => {
+      slideContainer.style.transition = "none";
+      currentIndex = 0;
+      slideContainer.style.transform = `translateX(0%)`;
+    }, 500);
+  }
+}
 
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    track.addEventListener('transitionend', () => {
-
-        // Handle invisible snap from cloned slide
-        if (currentIndex === totalSlides - 1) {
-            track.style.transition = 'none';
-            currentIndex = 0;
-            track.style.transform = `translateX(0%)`;
-            void track.offsetWidth;
-            track.style.transition = 'transform 0.6s ease-in-out';
-        }
-    });
-
-    // Dot click navigation
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentIndex = index;
-
-            updateDots(index); // update instantly
-
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        });
-    });
-
-    setInterval(moveSlide, 4000);
-});
+setInterval(nextSlide, 3000);
+})
 </script>
 <!--SCRIPT FOR CAROUSEL BUTTONS-->
 <script>
