@@ -81,7 +81,7 @@ figcaption {
 .free {
     font-weight: 600;
     font-variant-caps: small-caps;
-    background: linear-gradient(90deg, #1c4665, #e06c33, #e06c33, #1c4665);
+    background: linear-gradient(90deg, #1c4665, #1c4665, #e06c33, #e06c33, #1c4665, #1c4665);
     background-size: 300% 100%;
     background-position: 0% 50%;
     -webkit-background-clip: text;

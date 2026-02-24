@@ -6,29 +6,29 @@
         font-size: 7.47px;
       }
 
-      .d, .e {
+      .d, .e, .f {
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .d, .f {
         fill: #231f20;
         font-family: DINAlternate-Bold, 'DIN Alternate';
         font-weight: 700;
         stroke-width: .1px;
       }
 
-      .d, .e, .f {
-        stroke: #000;
-        stroke-miterlimit: 10;
-      }
-
       .e {
-        font-size: 2.37px;
-      }
-
-      .f {
         fill: none;
         stroke-width: 1.5px;
       }
 
       .g {
         letter-spacing: 0em;
+      }
+
+      .f {
+        font-size: 3px;
       }
 
       .h {
@@ -116,8 +116,8 @@
       }
     </style>
   </defs>
-  <polygon class="f" points="10.36 24 2.89 24 12.34 8.45 20.26 24 16.3 24 20.75 15.11 25.21 24 30.16 24 20.75 5.54 10.36 24"/>
+  <polygon class="e" points="10.36 24 2.89 24 12.34 8.45 20.26 24 16.3 24 20.75 15.11 25.21 24 30.16 24 20.75 5.54 10.36 24"/>
   <text class="d" transform="translate(27.94 17.37)"><tspan class="r" x="0" y="0">o</tspan><tspan class="p" x="3.85" y="0">u</tspan><tspan class="aa" x="7.97" y="0">n</tspan><tspan class="v" x="12.06" y="0">t</tspan><tspan class="z" x="14.39" y="0">a</tspan><tspan class="m" x="18.23" y="0">i</tspan><tspan class="g" x="20.15" y="0">n </tspan><tspan class="s" x="25.95" y="0">P</tspan><tspan class="h" x="30.49" y="0">e</tspan><tspan class="q" x="34.4" y="0">a</tspan><tspan class="g" x="38.24" y="0">k</tspan></text>
   <text class="d" transform="translate(32.44 24.1)"><tspan class="t" x="0" y="0">C</tspan><tspan class="j" x="4.48" y="0">o</tspan><tspan class="ab" x="8.35" y="0">n</tspan><tspan class="l" x="12.44" y="0">t</tspan><tspan class="w" x="14.69" y="0">r</tspan><tspan class="k" x="17.89" y="0">a</tspan><tspan class="u" x="21.77" y="0">c</tspan><tspan class="i" x="25.44" y="0">t</tspan><tspan class="n" x="27.69" y="0">i</tspan><tspan class="o" x="29.61" y="0">n</tspan><tspan class="g" x="33.74" y="0">g</tspan></text>
-  <text class="e" transform="translate(70.75 20.86)"><tspan class="y" x="0" y="0">L</tspan><tspan class="x" x="1.39" y="0">L</tspan><tspan x="2.78" y="0">C</tspan></text>
+  <text class="f" transform="translate(70.21 21.04)"><tspan class="y" x="0" y="0">L</tspan><tspan class="x" x="1.76" y="0">L</tspan><tspan x="3.52" y="0">C</tspan></text>
 </svg>
