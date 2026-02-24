@@ -81,24 +81,35 @@ figcaption {
 .free {
     font-weight: 600;
     font-variant-caps: small-caps;
-    background: linear-gradient(to top right, black, aqua);
+    background: linear-gradient(90deg, #1c4665, #e06c33, #e06c33, #1c4665);
+    background-size: 300% 100%;
+    background-position: 0% 50%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    background-size: 300%;
-    animation: gradientText 3s alternate-reverse loop;}
+    animation: gradientText 2s ease-in-out infinite alternate;}
+
 @keyframes gradientText {
     from {
-        background-position: 0%;}
+        background-position: 0% 50%;}
     to {
-        background-position: 100%;}}
+        background-position: 100% 50%;}
+}
 
 .info {
     display: inline-block;
     padding: 0.25vw 0 0.25vw 1vw;
     margin: auto 0;}
 
+/*
+orange: #e06c33
+blue: #1c4665
+red: #8e382f
+lt gray: #aaacae
+gray: #858585
+dk gray: #666766
+*/
 
 
 
@@ -112,6 +123,7 @@ nav {
     height: 10vh;
     top: 0;
     box-sizing: border-box;
+    background: #e06c33;
     border-bottom: 2px solid #000000;
     z-index: 5;}
 
@@ -157,7 +169,7 @@ nav ul {
     top: 0px;
     right: 30px;
     background: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
     width: 45vw;
     padding: 1vw;
     display: none;
@@ -198,18 +210,18 @@ a {
 .button a {
     position: relative;
     text-decoration: none;
-    background-color: lightgray;
+    background: #aaacae;
     color: black;
     padding: 5px 8px 4px 8px;
     border-radius: 5px;
     box-shadow: 2px 4px 8px 2px black;}
 
 .button a:hover {
-    background: gray;
+    background: #858585;
     cursor: pointer;}
 
 .button a:active {
-    background-color: darkgray;
+    background-color: #666766;
     transform: translate(5px, 2px);
     box-shadow: inset 2.5px 2.5px 4px 2px black;}
 
@@ -234,9 +246,9 @@ section {
     width: 90vw;}
 
 .grey_box {
-    background: lightgray;
-    border-right: 5vw solid lightgray;
-    border-left: 5vw solid lightgray;
+    background: #f9fbfb;
+    border-right: 5vw solid #f9fbfb;
+    border-left: 5vw solid #f9fbfb;
     margin-top: -3vh;}
 
 .nav_menu {
@@ -287,7 +299,7 @@ section {
     margin-left: -5vw;
     height: auto;
     width: 100vw;
-    background: lightgray;
+    background: #858585;
     z-index: 3;}
 
 .gallery_box {
@@ -303,7 +315,7 @@ section {
 
 .logo_icon {
     margin-top: -2vh;
-    height: 8vh;}
+    height: 9vh;}
 
 .icon {
     transform: translateY(1.5vh);
@@ -317,6 +329,7 @@ section {
 .header_carousel {
     margin-top: 9vh;
     width: 100%;
+    border-bottom: 2px solid #000000;
     overflow: hidden;
     position: relative;}
 
@@ -375,7 +388,7 @@ section {
 .carousel_content {
     height: 70vh;
     width: 80%;
-    background: #e5e7e7;
+    background: #aaacae;
     border: 0.25vw solid #1f2929;
     margin: auto;
     display: none;}
@@ -426,11 +439,11 @@ section {
     cursor: pointer;}
 
 .carousel_button:hover {
-    background: lightgray;
+    background: #aaacae;
     transform: scale(1.2);}
 
 .carousel_button-active {
-    background: darkgray!important;}
+    background: #666766!important;}
 
 .carousel_btn {
     display: flex;
@@ -467,7 +480,7 @@ section {
     max-height: 3vh;
     max-width: 2vw;
     padding: 0px 4px;
-    background: lightgray;
+    background: #aaacae;
     border-radius: 5px;
     border-top: 0.05vw solid #1f2929;
     border-right: 0.125vw solid #1f2929;
@@ -477,7 +490,7 @@ section {
     transform: scale(2, 4);}
 
 #center:hover {
-    background: gray;}
+    background: #858585;}
 
 #center:active {
     background: darkgray;}
@@ -516,7 +529,7 @@ section {
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
     border-radius: 10px;
-    background-color: lightgray;
+    background: #aaacae;
     border: none;
     color: #000000;}
 
@@ -563,11 +576,15 @@ section {
 	margin: auto;}
 
 .footer_text {
+    color: #f9fbfb;
     font-size: calc(8pt + 0.5vw)!important;
     line-height: calc(10pt + 1vw)!important;}
 
 footer {
     border-top: 2px solid #000000;
+    background: #1c4665;
+    padding-top: 1vh;
+    padding-bottom: 2vh;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
