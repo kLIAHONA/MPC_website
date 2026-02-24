@@ -105,32 +105,34 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 <!--SCRIPT FOR HEADER CAROUSEL SLIDE-->
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-const slideContainer = document.querySelector(".header_carousel_content");
-const slides = document.querySelectorAll(".header_carousel_content img");
+  const slideContainer = document.querySelector(".header_carousel_track");
+  const slides = document.querySelectorAll(".header_carousel_content");
 
-const firstClone = slides[0].cloneNode(true);
-slideContainer.appendChild(firstClone);
+  if (!slideContainer || slides.length === 0) return;
 
-let currentIndex = 0;
+  const firstClone = slides[0].cloneNode(true);
+  slideContainer.appendChild(firstClone);
 
-function nextSlide() {
-  currentIndex++;
-  slideContainer.style.transition = "transform 0.5s ease-in-out";
-  slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+  let currentIndex = 0;
 
-  if (currentIndex === slides.length) {
-    setTimeout(() => {
-      slideContainer.style.transition = "none";
-      currentIndex = 0;
-      slideContainer.style.transform = `translateX(0%)`;
-    }, 500);
+  function nextSlide() {
+    currentIndex++;
+    slideContainer.style.transition = "transform 0.5s ease-in-out";
+    slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    if (currentIndex === slides.length) {
+      setTimeout(() => {
+        slideContainer.style.transition = "none";
+        currentIndex = 0;
+        slideContainer.style.transform = "translateX(0%)";
+      }, 500);
+    }
   }
-}
 
-setInterval(nextSlide, 3000);
-})
+  setInterval(nextSlide, 3000);
+});
 </script>
 <!--SCRIPT FOR CAROUSEL BUTTONS-->
 <script>
