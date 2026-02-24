@@ -107,31 +107,56 @@ document.addEventListener("DOMContentLoaded", function () {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  const slideContainer = document.querySelector(".header_carousel_track");
+  const track = document.querySelector(".header_carousel_track");
   const slides = document.querySelectorAll(".header_carousel_content");
+  const dots = document.querySelectorAll(".carousel_dot");
 
-  if (!slideContainer || slides.length === 0) return;
+  if (!track || slides.length === 0) return;
 
   const firstClone = slides[0].cloneNode(true);
-  slideContainer.appendChild(firstClone);
+  track.appendChild(firstClone);
 
   let currentIndex = 0;
+  const totalSlides = slides.length;
+
+  function updateDots(index) {
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index].classList.add("active");
+  }
+
+  function goToSlide(index) {
+    currentIndex = index;
+    track.style.transition = "transform 0.5s ease-in-out";
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    updateDots(currentIndex);
+  }
 
   function nextSlide() {
     currentIndex++;
-    slideContainer.style.transition = "transform 0.5s ease-in-out";
-    slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    track.style.transition = "transform 0.5s ease-in-out";
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-    if (currentIndex === slides.length) {
+    if (currentIndex === totalSlides) {
       setTimeout(() => {
-        slideContainer.style.transition = "none";
+        track.style.transition = "none";
         currentIndex = 0;
-        slideContainer.style.transform = "translateX(0%)";
+        track.style.transform = "translateX(0%)";
       }, 500);
     }
+
+    updateDots(currentIndex % totalSlides);
   }
 
+  // Auto slide
   setInterval(nextSlide, 3000);
+
+  // Dot click navigation
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      goToSlide(index);
+    });
+  });
+
 });
 </script>
 <!--SCRIPT FOR CAROUSEL BUTTONS-->
