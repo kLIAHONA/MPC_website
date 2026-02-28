@@ -1,14 +1,16 @@
-const express = require('express')
-const bodyParser = require('body-parser')
 const cors = require('cors')
-const nodemailer = require('nodemailer')
-require('dotenv').config()
 
-const app = express()
-const PORT = process.env.PORT || 5000
+// Only allow your frontend domain
+const corsOptions = {
+  origin: 'https://mpc-code.fly.dev', // your live frontend URL
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}
 
-app.use(cors())
-app.use(bodyParser.json())
+app.use(cors(corsOptions))
+
+// Also handle OPTIONS preflight requests
+app.options('*', cors(corsOptions))
 
 
 //Nodemailer Transporter Configuration
