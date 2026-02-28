@@ -142,10 +142,12 @@ nav ul {
     display: none;}
 
 .nav_btns {
+    color: white;
     display: inline;
     margin: 0px;}
 
 .nav_links {
+    color: white;
 	height: 50px;
 	margin: 0px;
 	padding: 0 10px;}
