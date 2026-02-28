@@ -161,50 +161,54 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 <!--SCRIPT FOR CONTACT FORM-->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('#contact_form')
 
-const form = document.querySelector('#contact_form')
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault()
 
-form.addEventListener('submit', async (e) => {
-    e.preventDefault()
+        const name = document.querySelector('#name').value.trim()
+        const email = document.querySelector('#email').value.trim()
+        const phone = document.querySelector('#phone').value.trim()
+        const subject = document.querySelector('#subject').value.trim()
+        const message = document.querySelector('#message').value.trim()
 
-    const name = document.querySelector('#name').value.trim()
-    const email = document.querySelector('#email').value.trim()
-    const phone = document.querySelector('#phone').value.trim()
-    const subject = document.querySelector('#subject').value.trim()
-    const message = document.querySelector('#message').value.trim()
-
-    if (!name || !email || !phone || !subject || !message) {
-        alert('Please fill out all fields.')
-        return
-    }
-
-    const API_URL =
-    window.location.hostname === 'localhost'
-        ? 'http://localhost:5000'
-        : 'https://mpc-code.fly.dev'
-
-    
-
-    try {
-        const response = await fetch(`${API_URL}/api/contact`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email, phone, subject, message })
-        })
-
-        if (response.ok) {
-            alert('Message sent successfully!')
-            form.reset()
-        } else {
-            const error = await response.json()
-            alert(error.error || 'Something went wrong.')
+        if (!name || !email || !phone || !subject || !message) {
+            alert('Please fill out all fields.')
+            return
         }
+
+        const API_URL = window.location.hostname === 'localhost'
+            ? 'http://localhost:5000'
+            : 'https://your-backend-app.fly.dev' // <-- replace with your backend Fly.io URL
+
+        try {
+            const response = await fetch(`${API_URL}/api/contact`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, phone, subject, message })
+            })
+
+            let data
+            try {
+                data = await response.json()
+            } catch {
+                console.error('Server returned non-JSON:', await response.text())
+                alert('Server returned invalid response.')
+                return
+            }
+
+            if (response.ok) {
+                alert('Message sent successfully!')
+                form.reset()
+            } else {
+                alert(data.error || 'Something went wrong.')
+            }
         } catch (err) {
             console.error('Fetch error:', err)
             alert('Server not responding.')
         }
-})
+    })
 })
 </script>
 </body>
