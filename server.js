@@ -1,54 +1,39 @@
 // server.js
 const express = require('express')
 const bodyParser = require('body-parser')
-const cors = require('cors')
 const nodemailer = require('nodemailer')
 require('dotenv').config()
+const path = require('path')
 
 const app = express()
 const PORT = process.env.PORT || 5000
 
-// --------------------
-// CORS Configuration
-// --------------------
-const corsOptions = {
-    origin: 'https://mpc-code.fly.dev',
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type'],
-}
-app.use(cors(corsOptions))
-app.options('*', cors(corsOptions)) // handle preflight requests
+// Serve frontend static files from public/
+app.use(express.static(path.join(__dirname, 'public')))
 
-// --------------------
-// Body Parser
-// --------------------
+// Body parser for JSON
 app.use(bodyParser.json())
 
-// --------------------
-// Nodemailer Setup
-// --------------------
+// Nodemailer transporter
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
     secure: true,
     auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        pass: process.env.EMAIL_PASS, // Use App Password if Gmail 2FA
     },
 })
 
-// --------------------
-// Contact Route
-// --------------------
+// Contact API
 app.post('/api/contact', async (req, res) => {
     const { name, email, phone, subject, message } = req.body
 
-    // Validate fields
     if (!name || !email || !phone || !subject || !message) {
         return res.status(400).json({ error: 'All fields are required.' })
     }
 
-    // Admin Email
+    // Email templates
     const adminHtml = `
         <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">
             <h2>New Contact Form Submission</h2>
@@ -60,7 +45,6 @@ app.post('/api/contact', async (req, res) => {
         </div>
     `
 
-    // User Acknowledgement Email
     const userHtml = `
         <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">
             <h2>Thank You, ${name}!</h2>
@@ -68,40 +52,36 @@ app.post('/api/contact', async (req, res) => {
         </div>
     `
 
-    const adminMailOptions = {
-        from: process.env.EMAIL_USER,
-        to: process.env.EMAIL_USER,
-        replyTo: email,
-        subject: subject,
-        html: adminHtml,
-    }
-
-    const userMailOptions = {
-        from: process.env.EMAIL_USER,
-        to: email,
-        subject: 'Thank you for contacting us!',
-        html: userHtml,
-    }
-
     try {
-        // Send Admin Email
-        await transporter.sendMail(adminMailOptions)
-        console.log('Admin email sent to', process.env.EMAIL_USER)
+        // Send admin email
+        await transporter.sendMail({
+            from: process.env.EMAIL_USER,
+            to: process.env.EMAIL_USER,
+            replyTo: email,
+            subject,
+            html: adminHtml,
+        })
 
-        // Send User Acknowledgement Email
-        await transporter.sendMail(userMailOptions)
-        console.log('Acknowledgement email sent to', email)
+        // Send acknowledgement to user
+        await transporter.sendMail({
+            from: process.env.EMAIL_USER,
+            to: email,
+            subject: 'Thank you for contacting us!',
+            html: userHtml,
+        })
 
         res.status(200).json({ success: true, message: 'Emails sent successfully!' })
-    } catch (error) {
-        console.error('Error sending emails:', error)
+    } catch (err) {
+        console.error('Error sending emails:', err)
         res.status(500).json({ error: 'Failed to send emails. Please try again later.' })
     }
 })
 
-// --------------------
-// Start Server
-// --------------------
+// Catch-all to serve index.html for any other frontend routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'))
+})
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })

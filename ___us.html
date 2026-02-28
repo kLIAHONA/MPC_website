@@ -178,12 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return
         }
 
-        const API_URL = window.location.hostname === 'localhost'
-            ? 'http://localhost:5000'
-            : 'https://mpc-code.fly.dev' // <-- replace with your backend Fly.io URL
-
         try {
-            const response = await fetch(`${API_URL}/api/contact`, {
+            const response = await fetch('/api/contact', {  // <-- relative path, no CORS
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, phone, subject, message })
@@ -193,7 +189,8 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 data = await response.json()
             } catch {
-                console.error('Server returned non-JSON:', await response.text())
+                const text = await response.clone().text()
+                console.error('Server returned non-JSON:', text)
                 alert('Server returned invalid response.')
                 return
             }
