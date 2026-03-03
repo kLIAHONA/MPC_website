@@ -123,14 +123,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function goToSlide(index) {
     currentIndex = index;
-    track.style.transition = "transform 3.5s ease-in-out";
+    track.style.transition = "transform 0.5s ease-in-out";
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
     updateDots(currentIndex);
   }
 
   function nextSlide() {
     currentIndex++;
-    track.style.transition = "transform 0.5s ease-in-out";
+    track.style.transition = "transform 3.5s ease-in-out";
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
     if (currentIndex === totalSlides) {
