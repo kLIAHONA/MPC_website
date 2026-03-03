@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function nextSlide() {
     currentIndex++;
-    track.style.transition = "transform 1.5s ease-in-out"; //transition time
+    track.style.transition = "transform 1.5s ease-in-out";
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
     if (currentIndex === totalSlides) {
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
         track.style.transition = "none";
         currentIndex = 0;
         track.style.transform = "translateX(0%)";
-      }, 1500);
+      }, 1500); //transition time to copy
     }
 
 
