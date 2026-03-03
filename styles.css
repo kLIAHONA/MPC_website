@@ -148,11 +148,13 @@ nav ul {
 
 .nav_links {
     color: white;
+    text-decoration: none;
 	height: 50px;
 	margin: 0px;
 	padding: 0 10px;}
 
 .active {
+    text-decoration: underline;
     font-weight: bold;}
 
 
@@ -326,6 +328,44 @@ section {
     margin: auto 0;
     width: 5vh;
     height: 5vh;}
+
+.img_blurb_grid {
+    margin: auto;
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1vw;}
+
+.img_blurb_box {
+    width: 100%;
+    position: relative;
+    display: flex;}
+  
+.img_blurb_box img {
+    width: 100%;
+    height: auto;}
+
+.img_blurb_popup {
+    position: absolute;
+    bottom: 25%;   /* position above image */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 8px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;}
+
+.img_blurb_box:hover .img_blurb_popup {
+  opacity: 1;}
+
+
+
+
 
 
 /*HEADER CAROUSEL*/
