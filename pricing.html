@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Peak Contracting - home</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav class="col-12">
+        <div>
+            <ul class="p navbar">
+                <li><a class="nav_links" href="index.html"><img class="logo_icon" src="/imgs/Logo.svg"></a></li>
+                <div class="nav_menu">
+                    <li class="nav_btns"><a class="nav_links" href="index.html">Home</a></li>
+                    <li class="nav_btns"><a class="nav_links active" href="pricing.html">Pricing</a></li>
+                    <li class="nav_btns"><a class="nav_links" href="services.html">Services</a></li>
+                    <li class="nav_btns"><a class="nav_links" href="gallery.html">Gallery</a> </li>
+                    <li class="nav_btns"><a class="nav_links" href="___us.html">Contact Us</a></li>
+                </div>
+                <div class="mobile_navbar">
+                    <a href="#" id="menu_btn">☰</a>
+                </div>
+                <div id="mobile_menu" class="menu h4">
+                    <li class="nav_btns"><a class="nav_links" href="index.html">Home</a></li>
+                    <li class="nav_btns"><a class="nav_links active" href="pricing.html">Pricing</a></li>
+                    <li class="nav_btns"><a class="nav_links" href="services.html">Services</a></li>
+                    <li class="nav_btns"><a class="nav_links" href="gallery.html">Gallery</a> </li>
+                    <li class="nav_btns"><a class="nav_links" href="___us.html">Contact Us</a></li>
+                </div>
+            </ul>
+        </div>
+    </nav>
+<main>
+    <section class="mar_top table_grid">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2" class="text_center h4">Sheds</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="red_bkgd">
+                    <td>Starting at</th>
+                    <td class="text_right">$30 per sqft</th>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text_center">Add ons</td>
+                </tr>
+                <tr>
+                    <td>Windows</td>
+                    <td class="text_right">$350</td>
+                </tr>
+                <tr>
+                    <td>Painting</td>
+                    <td class="text_right">$300</td>
+                </tr>
+                <tr>
+                    <td>Ramp</td>
+                    <td class="text_right">$150</td>
+                </tr>
+                <tr>
+                    <td>Door</td>
+                    <td class="text_right">$200</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2" class="text_center h4">Decks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="red_bkgd">
+                    <td>Starting at</th>
+                    <td class="text_right">$___ per ___</th>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text_center">Add ons</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="text_right"></td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2" class="text_center h4">Covers and Pergolas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="red_bkgd">
+                    <td>Starting at</th>
+                    <td class="text_right">$___ per ___</th>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text_center">Add ons</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="text_right"></td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2" class="text_center h4">Shops and Pole Barns</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="red_bkgd">
+                    <td>Starting at</th>
+                    <td class="text_right">$___ per ___</th>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text_center">Add ons</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="text_right"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+<footer class="row col-12">
+    <div class="footer_content_s">
+        <h6 class="footer_text">Hours of Operation</br>Monday&#8211;Friday</br>7:30am&#8211;6:00pm</h6>
+    </div>
+    <div class="footer_content_s">
+        <h6 class="footer_text">Located in Spokane, Washington</h6>
+    </div>
+    <div class="footer_content_w">
+        <h6 class="footer_text">(509) 425-2476</br>mtnpkcontracting@gmail.com</h6>
+    </div>
+</footer>
+<!--SCRIPT FOR POP UP MENU-->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("menu_btn");
+    const mobileMenu = document.getElementById("mobile_menu");
+
+    menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.toggle("open");
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!mobileMenu.contains(e.target) && e.target !== menuBtn) {
+            mobileMenu.classList.remove("open");
+        }
+    });
+});
+</script>
+</body>
+</html>
