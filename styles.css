@@ -206,7 +206,7 @@ a {
     margin-left: auto;
     color: yellow;
     text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px  0.5px 0 #000, 0.5px  0.5px 0 #000;
-    font-size: 3vw;}
+    font-size: calc(16pt + 0.5vw);}
 
 .button {
     line-height: 42pt;}
@@ -331,6 +331,14 @@ section {
     width: 5vh;
     height: 5vh;}
 
+.rev_img_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    padding-bottom: 5vh;}
+.rev_img {
+    width: 99%;}
+
 .img_blurb_grid {
     margin: 5vh auto;
     width: 90vw;
@@ -347,54 +355,35 @@ section {
     width: 100%;
     height: auto;}
 
+.blurb_text {
+    margin-top: 1vh;
+    padding: 0.5vh 1vw;
+    font-size: calc(14pt + 0.5vw)!important;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    text-wrap: wrap;
+    border-radius: 6px;
+    opacity: 1;}
+
 .img_blurb_label {
     position: absolute;
-    width: 95%;
-    height: 25%;
-    top: 0%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    text-align: center;
-    text-wrap: wrap;
-    border-radius: 6px;
-    opacity: 1;}
-
-.img_blurb_label_sml {
-    position: absolute;
-    width: 35%;
-    height: 25%;
-    top: 0%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    text-align: center;
-    text-wrap: wrap;
-    border-radius: 6px;
-    opacity: 1;}
-
-.blurb_text {
-    position: absolute;
-    width: 125%;
-    top: -70%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    text-align: center;
-    text-wrap: wrap;
-    opacity: 1;}
+    display: flex;
+    justify-content: center;
+    width: 100%;}
 
 .img_blurb_popup {
+    display: flex;
+    align-items: center;
     position: absolute;
-    width: 90%;
-    bottom: 0%;   /* position above image */
+    width: 92.5%;
+    height: 93%;
+    top: 0%;   /* position above image */
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
-    text-align: left;
+    text-align: center;
     text-wrap: wrap;
     padding: 8px 12px;
     border-radius: 6px;
@@ -402,12 +391,27 @@ section {
     pointer-events: none;
     transition: opacity 0.3s ease;}
 
-.img_blurb_box:hover .img_blurb_label {
+.img_blurb_popup h6 {
+	font-size: calc(8pt + 0.5vw);
+	line-height: 16pt;}
+
+
+.how_to {
+    margin: -1vh auto;
+    text-align: center;
+    width: auto;
+    font-size: 2vh;
+    padding: 0vh;
+    z-index: 5;}
+
+.img_blurb_box:hover .blurb_text {
     opacity: 0;}
-.img_blurb_box:hover .img_blurb_label_sml {
+.img_blurb_box:focus .blurb_text {
     opacity: 0;}
 
 .img_blurb_box:hover .img_blurb_popup {
+    opacity: 1;}
+.img_blurb_box:focus .img_blurb_popup {
     opacity: 1;}
 
 
@@ -425,6 +429,9 @@ table {
     border-collapse: collapse;
     margin: 20px 0;
     font-family: Arial, sans-serif;}
+
+thead {
+    border: 2px solid #f9fbfb;}
 
 tbody {
     border: 2px solid #000;}
@@ -577,7 +584,7 @@ tr:nth-child(odd) {
     background: none;
     border: none;
     min-width: 25px;
-    top: 30vh;
+    top: 17vh;
     margin: auto;
     cursor: pointer;
     z-index: 2;}
@@ -776,11 +783,20 @@ footer {
         display: none;}
     .mobile {
         display: inline-block;}
+    .img_blurb_popup {
+        height: 105%;}
+    .img_blurb_popup h6 {
+        line-height: 14pt;}
 }
 
 @media screen and (max-width: 830px) {
     .gallery_box {
         width: 32%;} 
+}
+
+@media screen and (max-width: 730px) {
+    .img_blurb_grid {
+        grid-template-columns: repeat(2, 1fr);}
 }
 
 @media screen and (max-width: 630px) {
@@ -814,6 +830,25 @@ footer {
     .times {
         font-size: calc(8pt + 0.5vw);
 	    line-height: 18pt;}
+    .img_blurb_grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2vh;}
+    .img_blurb_box {
+        margin: auto;
+        width: 75vw;}
+    .carousel {
+        width: 99%;}
+    .carousel_content {
+        width: 100%;}
+    .prev_btn {
+        left: -5vw;}
+    .next_btn {
+        right: -5vw;}
+    .table_grid {
+        grid-template-columns: repeat(1, 1fr);}
+    table {
+        margin: auto;
+        width: 90%;}
     .gallery_box {
         margin: auto;
         width: 100%;}
