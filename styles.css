@@ -837,7 +837,8 @@ footer {
         gap: 2vh;}
     .img_blurb_box {
         margin: auto;
-        width: 75vw;}
+        width: 75vw;
+        height: 75vw;}
     .carousel {
         width: 99%;}
     .carousel_content {
