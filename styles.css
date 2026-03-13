@@ -300,14 +300,6 @@ section {
 
 
 /*IMAGES*/
-.header_img {
-    margin-top: 8vh;
-    margin-left: -5vw;
-    height: auto;
-    width: 100vw;
-    background: #858585;
-    z-index: 3;}
-
 .gallery_box {
     display: inline-block;
     margin: 0.25vw;
@@ -478,11 +470,21 @@ tr:nth-child(odd) {
     overflow: hidden;}
 
 .header_img {
+    margin-top: 8vh;
+    margin-left: -5vw;
+    background: #858585;
     width: 100%;
     height: 100%;
     margin: 0;
     object-fit: cover;
-    object-position: center;}
+    z-index: 3;}
+
+#header_img_1{
+    object-position: 60% 50%;}
+#header_img_2{
+    object-position: 40% 50%;}
+#header_img_3{
+    object-position: 10% 50%;}
 
 .header_carousel_nav {
     position: absolute;
