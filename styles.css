@@ -571,7 +571,7 @@ tr:nth-child(odd) {
     margin: 0 1vw;
     margin-top: 1%;
     background: white;
-    border: 2px solid black;
+    border: 2px solid pink;
     border-radius: 50%;
     cursor: pointer;}
 
