@@ -569,7 +569,7 @@ tr:nth-child(odd) {
     width: 12px!important;
     height: 16px!important;
     margin: 5px;
-    border: 2px solid pink;
+    border: 2px solid #000000;
     border-radius: 50%;
     cursor: pointer;}
 
