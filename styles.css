@@ -566,8 +566,8 @@ tr:nth-child(odd) {
 
 .carousel_button {
     display: inline-block;
-    width: 2vw;
-    height: 2vw;
+    width: 8px;
+    height: 8px;
     margin: 0 1vw;
     margin-top: 1%;
     background: white;
