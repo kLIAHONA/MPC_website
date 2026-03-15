@@ -566,8 +566,8 @@ tr:nth-child(odd) {
 
 .carousel_button {
     display: inline-block;
-    width: 12px;
-    height: 12px;
+    width: 12px!important;
+    height: 16px!important;
     margin: 5px;
     border: 2px solid pink;
     border-radius: 50%;
@@ -802,6 +802,14 @@ footer {
 }
 
 @media screen and (max-width: 630px) {
+    .carousel {
+        width: 85%;}
+    .carousel_content {
+        width: 100%;}
+    .prev_btn {
+        left: -5vw;}
+    .next_btn {
+        right: -5vw;}
     .gallery_box {
         margin: 1px;
         width: 49%;}
