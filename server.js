@@ -8,11 +8,11 @@ const path = require('path')
 const app = express()
 const PORT = process.env.PORT || 5000
 
-// Serve frontend static files from public/
-app.use(express.static(path.join(__dirname, 'public')))
-
 // Body parser for JSON
 app.use(bodyParser.json())
+
+// Serve frontend static files from root
+app.use(express.static(__dirname))
 
 // Nodemailer transporter
 const transporter = nodemailer.createTransport({
@@ -78,8 +78,8 @@ app.post('/api/contact', async (req, res) => {
 })
 
 // Catch-all to serve index.html for any other frontend routes
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'))
+app.use('/{*splat}', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'))
 })
 
 app.listen(PORT, () => {

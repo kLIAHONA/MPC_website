@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mountain Peak Contracting - home</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="server.js">
 </head>
 <body>
     <nav class="col-12">
@@ -48,16 +47,16 @@
                 </div>
             </div>
         </div>
-       <!--<div class="contact_right">
+       <div class="contact_right">
             <form class="contact_form" id="contact_form">
                 <input type="text" id="name" placeholder="Full Name *">
                 <input type="email" id="email" placeholder="Email *">
                 <input type="text" id="phone" placeholder="Phone Number *">
                 <input type="text" id="subject" placeholder="Subject *">
                 <textarea id="message" placeholder="Message *"></textarea>
-                <button type="submit" id="submit_btn">Submit Form</button> 
+                <button type="submit" id="submit_btn">Submit Form</button>
             </form>
-        </div>-->
+        </div>
     </section>
 
 
@@ -137,25 +136,25 @@ document.addEventListener("DOMContentLoaded", function () {
 <script>
     const nextImg = document.getElementById('next_btn');
     const prevImg = document.getElementById('prev_btn');
-    
+
     const nextButton = nextImg ? nextImg.closest('.carousel_btn') || nextImg.parentElement : null;
     const prevButton = prevImg ? prevImg.closest('.carousel_btn') || prevImg.parentElement : null;
-    
+
     function addPressed(el) { if (el) el.classList.add('pressed'); }
     function removePressed(el) { if (el) el.classList.remove('pressed'); }
-    
+
     function attachPressListeners(el) {
         if (!el) return;
-        
+
         el.addEventListener('pointerdown', () => addPressed(el));
         el.addEventListener('pointerup', () => removePressed(el));
         el.addEventListener('pointercancel', () => removePressed(el));
         el.addEventListener('pointerleave', () => removePressed(el));
-        
+
         el.addEventListener('touchstart', () => addPressed(el), {passive: true});
         el.addEventListener('touchend', () => removePressed(el));
     }
-    
+
     attachPressListeners(nextButton);
     attachPressListeners(prevButton);
 </script>
@@ -189,8 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 data = await response.json()
             } catch {
-                const text = await response.clone().text()
-                console.error('Server returned non-JSON:', text)
+                console.error('Server returned non-JSON response')
                 alert('Server returned invalid response.')
                 return
             }
