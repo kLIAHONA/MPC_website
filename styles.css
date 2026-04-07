@@ -420,15 +420,18 @@ section {
     padding: 0vh;
     z-index: 5;}
 
-.img_blurb_box:hover .blurb_text {
-    opacity: 0;}
-.img_blurb_box:focus .blurb_text {
-    opacity: 0;}
+/* keep default hidden state */
+.img_blurb_box .img_blurb_popup {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
 
-.img_blurb_box:hover .img_blurb_popup {
-    opacity: 1;}
-.img_blurb_box:focus .img_blurb_popup {
-    opacity: 1;}
+/* show when JS toggles the box */
+.img_blurb_box.is-active .img_blurb_popup {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 
 
