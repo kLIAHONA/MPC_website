@@ -171,6 +171,12 @@
         </div>
     </section>
 </main>
+<div class="popup_btn">
+    <a href="#" id="popup_btn">Click to schedule a free consult</a>
+</div>
+<div id="popup_window" class="popup h5">
+    
+</div>
 <footer class="row col-12">
     <div class="footer_content_s">
         <h6 class="footer_text">Hours of Operation</br>Monday&#8211;Friday</br>7:30am&#8211;6:00pm</h6>
@@ -187,6 +193,24 @@
 document.addEventListener("DOMContentLoaded", function () {
     const menuBtn = document.getElementById("menu_btn");
     const mobileMenu = document.getElementById("mobile_menu");
+
+    menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.toggle("open");
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!mobileMenu.contains(e.target) && e.target !== menuBtn) {
+            mobileMenu.classList.remove("open");
+        }
+    });
+});
+</script>
+<!--SCRIPT FOR POP UP MENU-->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("popup_btn");
+    const mobileMenu = document.getElementById("popup_window");
 
     menuBtn.addEventListener("click", (e) => {
         e.stopPropagation();
