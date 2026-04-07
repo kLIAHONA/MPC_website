@@ -163,6 +163,7 @@ nav ul {
 
 /*MOBILE MENU*/
 #menu_btn {
+    color: #f9fbfb;
     font-size: 30px;
     padding: 1vw 1vw;
     cursor: pointer;
