@@ -189,7 +189,25 @@ nav ul {
 
 .menu.open {
     display: flex;}
+    
+/*POP UP WINDOW*/
+.popup_btn {
+    display: flex;}
 
+#popup_btn {
+    position: fixed;
+    align-content: center;
+    text-align: center;
+    right: 1vw;
+    bottom: 15vh;
+    width: 10vw;
+    height: 7vh;
+    background: #1c4665;
+    color: #f9fbfb;
+    text-decoration: none;}
+
+#popup_btn:hover {
+    text-decoration: underline;}
 
 
 
