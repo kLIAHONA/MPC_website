@@ -190,11 +190,11 @@ nav ul {
 .menu.open {
     display: flex;}
     
-/*POP UP WINDOW*/
-.popup_btn {
+/*sticky btn*/
+.sticky_btn {
     display: flex;}
 
-#popup_btn {
+#sticky_btn {
     position: fixed;
     align-content: center;
     text-align: center;
@@ -204,11 +204,12 @@ nav ul {
     height: 7vh;
     border-radius: 15px;
     background: #1c4665;
+    box-shadow: 2px 4px 8px 2px black;
     color: #f9fbfb;
     text-decoration: none;
     z-index: 10;}
 
-#popup_btn:hover {
+#sticky_btn:hover {
     text-decoration: underline;}
 
 
