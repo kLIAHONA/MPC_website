@@ -202,9 +202,11 @@ nav ul {
     bottom: 15vh;
     width: 10vw;
     height: 7vh;
+    border-radius: 5px;
     background: #1c4665;
     color: #f9fbfb;
-    text-decoration: none;}
+    text-decoration: none;
+    z-index: 10;}
 
 #popup_btn:hover {
     text-decoration: underline;}
