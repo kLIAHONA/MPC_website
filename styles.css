@@ -689,10 +689,10 @@ tr:nth-child(odd) {
 .contact_form input::placeholder, .contact_form textarea::placeholder {
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-    color: #505050;}
+    color: #000000;}
 
 #submit_btn {
-    background: #a33a37;
+    background: #72a32e;
     border: none;
     margin: auto;
     padding: 10px!important;
