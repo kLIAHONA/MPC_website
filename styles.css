@@ -205,6 +205,8 @@ nav ul {
     border-radius: 15px;
     background: #1c4665;
     box-shadow: 2px 4px 8px 2px black;
+    font-size: calc(12pt + 0.5vw);
+	line-height: calc(16pt + 1.5vh);
     color: #f9fbfb;
     text-decoration: none;
     z-index: 10;}
@@ -806,6 +808,11 @@ footer {
 	flex: 0 0 100%;
 	max-width: 100%;}
 
+@media screen and (max-width: 1080px) {
+    #sticky_btn {
+        height: 13vh}
+}
+
 @media screen and (max-width: 1024px) {
     .desktop {
         display: none;}
@@ -820,6 +827,9 @@ footer {
 @media screen and (max-width: 830px) {
     .gallery_box {
         width: 32%;}
+    #sticky_btn {
+        font-size: calc(8pt + 0.5vw);
+        line-height: 18pt;}
 }
 
 @media screen and (max-width: 730px) {
