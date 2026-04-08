@@ -678,7 +678,7 @@ tr:nth-child(odd) {
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
     border-radius: 10px;
-    background: #aaacae;
+    background: #e9ebeb;
     border: none;
     color: #000000;}
 
@@ -692,6 +692,7 @@ tr:nth-child(odd) {
     color: #505050;}
 
 #submit_btn {
+    background: #a33a37;
     border: none;
     margin: auto;
     padding: 10px!important;
