@@ -81,7 +81,7 @@ figcaption {
 .free {
     font-weight: 600;
     font-variant-caps: small-caps;
-    background: linear-gradient(90deg, #a33a37, #a33a37, #1c4665, #1c4665, #a33a37, #a33a37);
+    background: linear-gradient(90deg, #a33a37, #a33a37, #DD4E4B, #DD4E4B, #a33a37, #a33a37);
     background-size: 300% 100%;
     background-position: 0% 50%;
     -webkit-background-clip: text;
@@ -696,7 +696,7 @@ tr:nth-child(odd) {
     border: none;
     margin: auto;
     padding: 10px!important;
-    width: 30vw;
+    width: 20vw;
     height: auto;}
 
 
